@@ -23,6 +23,27 @@ for(let i=0; i<inputArr.length; i++)
 // console.log(optionsArr);
 // console.log(fileArr);
 
+function fn() {
+
+ let bothBNpresent = optionsArr.includes("-b") && optionsArr.includes("-n");
+     if(bothBNpresent==true)
+     {
+         console.log("either b can be given as input or n can be given");         
+         return;         
+         
+     }
+
+     for(let i=0; i<fileArr.length;i++)
+     {
+         let isPresent = fs.existsSync(fileArr[i]);
+         if(isPresent==false)
+         {
+             console.log("please input correct filename");
+             return;
+         }
+     }
+ 
+
 
 
 let content ="";
@@ -77,6 +98,12 @@ if(isNpresent == true){
    }
 }
      console.log(buffer.join("\n"));
+
+
+}
+
+
+     fn();
 
 // let tempArr =[];
 
